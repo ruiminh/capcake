@@ -15,11 +15,21 @@
     <jsp:body>
 
         <div>
-            <h2>Our Cool Site</h2>
+            <h2>Øens bedst cupcakes</h2>
 
-            <div style="margin-top: 3em;margin-bottom: 3em;">
-                Main page for this 2. semester start project used at cphbusiness.dk
-            </div>
+
+            <form method="post" action="${pageContext.request.contextPath}/fc/shoppingbag">
+
+                <input>
+            </form>
+                <div class="form-group">
+                    <label for="height">height in cm</label>
+                    <input id="height" name="height" type="text" class="form-control"/>
+                </div>
+                <div class="form-group">
+                    <label for="weight">weight in kg</label>
+                    <input id="weight" name="weight" type="text" class="form-control"/><br/>
+                </div>
 
             <c:if test="${sessionScope.role == 'employee' }">
                 <p style="font-size: larger">This is what you can do,
