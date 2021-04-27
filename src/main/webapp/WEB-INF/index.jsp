@@ -15,7 +15,7 @@
     <jsp:body>
 
         <div style="margin-top: 5em;" class="container">
-            <form name="login" action="${pageContext.request.contextPath}/fc/basket"  method="POST">
+            <form name="login" action="${pageContext.request.contextPath}/fc/fakepage"  method="POST">
                 <div class="container">
                     <select class="form-select form-select-sm mb-3"  aria-label="Bund" name="topping" id="topping">
                         <option selected>Vælg topping</option>
