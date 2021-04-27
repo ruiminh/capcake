@@ -17,21 +17,21 @@
         <div style="margin-top: 5em;" class="container">
             <form name="login" action="${pageContext.request.contextPath}/fc/basket"  method="POST">
                 <div class="container">
-                    <select class="form-select form-select-lg mb-3"  aria-label="Bund" name="topping" id="topping">
+                    <select class="form-select form-select-sm mb-3"  aria-label="Bund" name="topping" id="topping">
                         <option selected>Vælg topping</option>
                         <c:forEach var="topping" items="${applicationScope.toppingList}">
-                            <option value="toppingId">${topping.name} &nbsp;&nbsp; ${topping.price}Kr. </option>
+                            <option value="toppingId">${topping.name} (${topping.price}Kr.) </option>
                         </c:forEach>
                     </select>
 
-                    <select class="form-select form-select-lg mb-3"  aria-label="Bund" name="bottom" id="bottom">
+                    <select class="form-select form-select-sm mb-3"  aria-label="Bund" name="bottom" id="bottom">
                         <option selected>Vælg bund</option>
                         <c:forEach var="bottom" items="${applicationScope.bottomList}">
-                            <option value="bottomId">${bottom.name} &nbsp;&nbsp; ${bottom.price}Kr. </option>
+                            <option value="bottomId">${bottom.name} (${bottom.price}Kr.) </option>
                         </c:forEach>
                     </select>
 
-                    <select class="form-select form-select-lg mb-3" aria-label="antal" name="amount" id="amount">
+                    <select class="form-select form-select-sm mb-3" aria-label="antal" name="amount" id="amount">
                         <option selected>Vælg antal</option>
                         <option value="1">1</option>
                         <option value="2">2</option>

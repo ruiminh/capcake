@@ -1,6 +1,8 @@
 package web;
 
+import business.entities.Topping;
 import business.exceptions.UserException;
+import business.persistence.BasketEntryMapper;
 import business.persistence.Database;
 import web.commands.*;
 
@@ -39,6 +41,17 @@ public class FrontController extends HttpServlet
         }
 
         // Initialize whatever global datastructures needed here:
+        BasketEntryMapper basketEntryMapper = new BasketEntryMapper(database);
+        try {
+            getServletContext().setAttribute("toppingList", basketEntryMapper.getAllToppings());
+        } catch (UserException e) {
+            e.printStackTrace();
+        }
+        try {
+            getServletContext().setAttribute("bottomList", basketEntryMapper.getAllTBottoms());
+        } catch (UserException e) {
+            e.printStackTrace();
+        }
     }
 
     protected void processRequest(
