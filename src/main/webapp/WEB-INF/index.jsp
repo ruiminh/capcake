@@ -14,36 +14,34 @@
 
     <jsp:body>
 
-        <div>
-            <h2>Øens bedst cupcakes</h2>
+        <div style="margin-top: 5em;" class="container">
+            <form name="login" action="${pageContext.request.contextPath}/fc/basket"  method="POST">
+                <div class="container">
+                    <select class="form-select form-select-lg mb-3"  aria-label="Bund" name="topping" id="topping">
+                        <option selected>Vælg topping</option>
+                        <c:forEach var="topping" items="${applicationScope.toppingList}">
+                            <option value="toppingId">${topping.name} &nbsp;&nbsp; ${topping.price}Kr. </option>
+                        </c:forEach>
+                    </select>
 
+                    <select class="form-select form-select-lg mb-3"  aria-label="Bund" name="bottom" id="bottom">
+                        <option selected>Vælg bund</option>
+                        <c:forEach var="bottom" items="${applicationScope.bottomList}">
+                            <option value="bottomId">${bottom.name} &nbsp;&nbsp; ${bottom.price}Kr. </option>
+                        </c:forEach>
+                    </select>
 
-            <form method="post" action="${pageContext.request.contextPath}/fc/shoppingbag">
-
-                <input>
+                    <select class="form-select form-select-lg mb-3" aria-label="antal" name="amount" id="amount">
+                        <option selected>Vælg antal</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary" type="submit">læg i kurv</button>
             </form>
-                <div class="form-group">
-                    <label for="height">height in cm</label>
-                    <input id="height" name="height" type="text" class="form-control"/>
-                </div>
-                <div class="form-group">
-                    <label for="weight">weight in kg</label>
-                    <input id="weight" name="weight" type="text" class="form-control"/><br/>
-                </div>
-
-            <c:if test="${sessionScope.role == 'employee' }">
-                <p style="font-size: larger">This is what you can do,
-                    since your are logged in as an employee</p>
-                 <p><a href="fc/employeepage">Employee Page</a>
-             </c:if>
-
-             <c:if test="${sessionScope.role == 'customer' }">
-                <p style="font-size: larger">This is what you can do, since your
-                    are logged in as a customer</p>
-                <p><a href="fc/customerpage">Customer Page</a>
-            </c:if>
-
         </div>
-
     </jsp:body>
 </t:genericpage>

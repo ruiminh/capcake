@@ -39,7 +39,6 @@ public class FrontController extends HttpServlet
         }
 
         // Initialize whatever global datastructures needed here:
-
     }
 
     protected void processRequest(
